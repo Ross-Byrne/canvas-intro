@@ -16,21 +16,141 @@
 
   <body>
 
-    <canvas id="canvasOne"></canvas>
+	  <div>
+			<canvas id="canvasOne"></canvas>
+	  </div>
 
+	  <div>
+			<canvas id="canvasTwo" width="300px" height="300px"></canvas>
+	  </div>
+	  
+	  <div>
+			<canvas id="CanvasThree" width="200px" height="200px"></canvas>
+	  </div>
+	  
+	  <div>
+			<canvas id="CanvasFour" width="200px" height="200px"></canvas>
+	  </div>
+	  
+	  <div>
+			<canvas id="CanvasFive" width="200px" height="200px"></canvas>
+		  
+	  </div>
+
+	
+	  
     <script type="text/javascript">
+		 
+		 /************************ blueSquare ******************************/
 
       // Gets a handle to the element with id canvasOne.
       var canvas = document.getElementById("canvasOne");
+		 
       // Set the canvas up for drawing in 2D.
-      var ctx = canvas.getContext("2d");
-
+      var blueSquare = canvas.getContext("2d");
+		 
       // Set the fill colour to bright red.
-      ctx.fillStyle = "rgb(255, 0, 0)";
+      blueSquare.fillStyle = "rgba(0, 0, 255, 0.8)"; // 20% alpha
+		 
       // Create a filled rectangle at co-ordinates (10,10)
       // with height and width set to 100.
-      ctx.fillRect(10, 10, 100, 100);
-
+      blueSquare.fillRect(10, 10, 200, 1000);
+		 
+		 /************************ redSquare ******************************/
+		 
+		 // Gets a handle to the element with id canvasTwo.
+      var canvas = document.getElementById("canvasTwo");
+		
+		 // second red square
+		 var redSquare = canvas.getContext("2d");
+		 
+		 // set colour for square to red
+		 redSquare.fillStyle = "rgba(255, 0, 0, 0.8)"; // 20% alpha
+		 
+		 // set coord of square
+		 redSquare.fillRect(10, 10, 250, 250);
+		 
+		 /************************ redCircle ******************************/
+		 
+		 // get reference for canvas
+		 var canvas = document.getElementById("CanvasThree");
+		 
+		 // setup canvas for 2d
+		 var redCircle = canvas.getContext("2d");
+		 
+		 // Set the fill colour to bright red.
+		 redCircle.fillStyle = "rgb(255, 0, 0)";
+		 
+		 // starts a path to draw
+		 redCircle.beginPath();
+		 
+		 // set size of circle
+		 redCircle.arc(50, 50, 40, 0, 2 * Math.PI);
+		 
+		 // draw
+		 redCircle.stroke();
+		 
+		 // fill in the colour
+		 redCircle.fill();
+		 
+		 /************************ blueCircle ******************************/
+		 
+		 // get reference for canvas
+		 var canvas = document.getElementById("CanvasFour");
+		 
+		 // setup canvas for 2d
+		 var blueCircle = canvas.getContext("2d");
+		 
+		 // Set the fill colour to bright blue.
+		 blueCircle.fillStyle = "rgb(0, 0, 255)";
+		 
+		 // starts a path to draw
+		 blueCircle.beginPath();
+		 
+		 // set size of circle
+		 blueCircle.arc(50, 50, 40, 0, 2 * Math.PI);
+		 
+		 // draw
+		 blueCircle.stroke();
+		 
+		 // fill in the colour
+		 blueCircle.fill();
+		 
+		 /************************ circle in square ******************************/
+		 
+		 /************************ square ******************************/
+		 
+		 // Gets a handle to the element with id canvasTwo.
+      var canvas = document.getElementById("CanvasFive");
+		
+		 // second red square
+		 var redSquare1 = canvas.getContext("2d");
+		 
+		 // set colour for square to red
+		 redSquare1.fillStyle = "rgba(255, 0, 0, 1)";
+		 
+		 // set coord of square
+		 redSquare1.fillRect(10, 10, 150, 150);
+		
+		 /************************ circle ******************************/
+		 
+		 var blueCircle2 = canvas.getContext("2d");
+		 
+		 // Set the fill colour to bright blue.
+		 blueCircle2.fillStyle = "rgb(0, 0, 255)";
+		 
+		 // starts a path to draw
+		 blueCircle2.beginPath();
+		 
+		 // set size of circle
+		 blueCircle2.arc(85, 85, 75, 0, 2 * Math.PI);
+		 
+		 // draw
+		 blueCircle2.stroke();
+		 
+		 // fill in the colour
+		 blueCircle2.fill();
+		 
     </script>
 
   </body>
