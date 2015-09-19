@@ -36,12 +36,17 @@
 			<canvas id="CanvasFive" width="200px" height="200px"></canvas>
 		  
 	  </div>
+      
+      <div>
+			<canvas id="CanvasSix" width="200px" height="200px"></canvas>
+		  
+	  </div>
 
 	
 	  
     <script type="text/javascript">
 		 
-		 /************************ blueSquare ******************************/
+		 /*======================= blueSquare =======================*/
 
       // Gets a handle to the element with id canvasOne.
       var canvas = document.getElementById("canvasOne");
@@ -56,7 +61,7 @@
       // with height and width set to 100.
       blueSquare.fillRect(10, 10, 200, 1000);
 		 
-		 /************************ redSquare ******************************/
+		 /*======================= redSquare =======================*/
 		 
 		 // Gets a handle to the element with id canvasTwo.
       var canvas = document.getElementById("canvasTwo");
@@ -93,7 +98,7 @@
 		 // fill in the colour
 		 redCircle.fill();
 		 
-		 /************************ blueCircle ******************************/
+		 /*======================= blueCircle =======================*/
 		 
 		 // get reference for canvas
 		 var canvas = document.getElementById("CanvasFour");
@@ -116,9 +121,9 @@
 		 // fill in the colour
 		 blueCircle.fill();
 		 
-		 /************************ circle in square ******************************/
+		 /*======================= circle in square =======================*/
 		 
-		 /************************ square ******************************/
+		 /*======================= square =======================*/
 		 
 		 // Gets a handle to the element with id canvasTwo.
       var canvas = document.getElementById("CanvasFive");
@@ -132,7 +137,7 @@
 		 // set coord of square
 		 redSquare1.fillRect(10, 10, 150, 150);
 		
-		 /************************ circle ******************************/
+		 /*======================= circle =======================*/
 		 
 		 var blueCircle2 = canvas.getContext("2d");
 		 
@@ -150,8 +155,59 @@
 		 
 		 // fill in the colour
 		 blueCircle2.fill();
+        
+  
+        /*======================= Pac-Man =======================*/
+        
+        // get reference to the canvas
+        var canvas = document.getElementById("CanvasSix");
+        
+        // setup canvas for 2d
+        var PMBody = canvas.getContext("2d");
+        
+        // Set the fill colour to yellow.
+        PMBody.fillStyle = "rgb(255, 255, 0)";
 		 
-    </script>
+        /*======================= Top Half Of Body =======================*/
+        
+        // starts a path to draw
+        PMBody.beginPath();
+
+        // set size of circle
+        PMBody.arc(85, 85, 75, .80 * Math.PI, 1.80 * Math.PI, false);
+
+        // fill in the colour
+        PMBody.fill();
+		 
+        /*======================= Bottom Half Of Body =======================*/
+        
+         // starts a path to draw
+        PMBody.beginPath();
+
+        // set size of circle
+        PMBody.arc(85, 85, 75, .20 * Math.PI, 1.20 * Math.PI, false);
+        
+        // fill in the colour
+        PMBody.fill();
+        
+        /*======================= Eye =======================*/
+        
+        // initialise new canvas object
+        var PMeye = canvas.getContext("2d");
+        
+        // set fill colour
+        PMeye.fillStyle = "rgb(0, 0, 0)";
+        
+         // starts a path to draw
+        PMeye.beginPath();
+
+        // set size of circle
+        PMeye.arc(100, 40, 10, 0, 2 * Math.PI, false);
+        
+        // fill in the colour
+        PMeye.fill();
+        
+      </script>
 
   </body>
 
